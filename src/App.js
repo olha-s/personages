@@ -1,25 +1,35 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useEffect } from "react";
+import './App.scss';
+import AppRoutes from "./routes/AppRoutes";
+import { connect } from "react-redux";
+import {
+  loadCards
+} from "./store/actions";
 
-function App() {
+const App = ({ loadCards }) => {
+  useEffect(() => {
+    const socket = new WebSocket("ws://testapi.marit.expert:3004");
+    loadCards(socket);
+
+    return () => socket.close();
+  }, [loadCards]);
+
+  // useEffect(() => {
+  //   loadCards();
+  //   // return () => webSocket.close();
+  // }, [loadCards]);
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <AppRoutes/>
     </div>
   );
-}
+};
 
-export default App;
+const mapDispatchToProps = (dispatch) => {
+  return {
+    loadCards: (socket) => dispatch(loadCards(socket))
+  };
+};
+export default connect(null, mapDispatchToProps)(App);
+

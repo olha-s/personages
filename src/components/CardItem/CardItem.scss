@@ -1,0 +1,50 @@
+.card {
+  &__wrapper {
+    width: 100%;
+    padding-bottom: 20px;
+  }
+
+  &__img-wrapper {
+    max-height: 240px;
+    overflow: hidden;
+  }
+
+  &__img {
+    display: block;
+    width: 100%;
+  }
+  &__btn-wrapper{
+    display: flex;
+    justify-content: space-evenly;
+  }
+  &__btn{
+    background: white;
+    font-size: 14px;
+    color: rebeccapurple;
+    border: 2px solid rebeccapurple;
+    border-radius: 3px;
+    outline: none;
+    cursor: pointer;
+  }
+
+  &__btn:hover {
+    color: white;
+    background: rebeccapurple;
+  }
+}
+@media screen and (max-width: 1280px) and (min-width: 961px) {
+  .card__img-wrapper {
+    max-height: 168px;
+  }
+  .card__btn {
+    font-size: 12px;
+  }
+}
+@media screen and (max-width: 960px)and (min-width: 890px){
+  .card__img-wrapper {
+    max-height: 228px;
+  }
+}
+@media screen and (max-width: 321px){
+
+}

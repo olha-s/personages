@@ -1,0 +1,45 @@
+.form{
+  &__container{
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.1);
+    background-blend-mode: darken;
+    font-size: 20px;
+  }
+  &__wrapper {
+    text-align: center;
+    position: relative;
+    width: 300px;
+    margin: auto;
+    transform: translateY(-50%);
+    box-shadow: 0 15px 25px rgba(0, 0, 0, .6);
+    border-radius: 3px;
+    top: 50%;
+    color: rebeccapurple;
+    background: white;
+    padding: 10px;
+  }
+  &__input{
+    font-size: 18px;
+    margin-bottom: 10px;
+    border: 1px solid black;
+    border-radius: 2px;
+  }
+  &__btn{
+    background: white;
+    font-size: 18px;
+    color: rebeccapurple;
+    border: 2px solid rebeccapurple;
+    border-radius: 3px;
+    outline: none;
+    cursor: pointer;
+  }
+
+  &__btn:hover {
+    color: white;
+    background: rebeccapurple;
+  }
+}
