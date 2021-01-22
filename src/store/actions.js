@@ -25,21 +25,8 @@ export const loadCards = (socket) => (dispatch) => {
       dispatch(CardsIsLoading(false));
       }
 )
-};
+}
 
-// export const loadCards = () => async (dispatch) => {
-//   dispatch(CardsIsLoading(true));
-//   const socket = await new WebSocket("ws://testapi.marit.expert:3004");
-//     socket.onopen = () => {
-//     socket.send({ cmd: "git_list" });
-//   };
-//     socket.onmessage = (message) => {
-//       const data = JSON.parse(message.data);
-//       dispatch({ type: "LOADING_CARDS", payload: data});
-//       dispatch(getRace(data.map(el => el.race)));
-//       dispatch(CardsIsLoading(false));
-//       };
-// };
 export const getPhoto = (name) =>({
   type: GET_IMAGE,
   payload: name
@@ -49,17 +36,7 @@ export const getRace = (race) => ({
 type: GET_RACE,
   payload: race
 });
-// export const getRace = (race) => (dispatch) => {
-//     return (
-//     dispatch({type: 'GET_RACE', payload: race})
-//   )
-// };
 
-// export const deleteItem = (id) => (dispatch) => {
-//   return (
-//     dispatch({type: 'DELETE_ITEM', payload: id})
-//   )
-// };
 export const deleteItem = (id) => ({
   type: DELETE_ITEM,
   payload: id
