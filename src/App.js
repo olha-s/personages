@@ -14,10 +14,6 @@ const App = ({ loadCards }) => {
     return () => socket.close();
   }, [loadCards]);
 
-  // useEffect(() => {
-  //   loadCards();
-  //   // return () => webSocket.close();
-  // }, [loadCards]);
 
   return (
     <div className="App">
